@@ -1,0 +1,73 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<section class="banner">
+
+   <h1>Mega Electronics Sale</h1>
+<p>Up To 20% OFF</p>
+
+</section>
+
+<h1 class="title">
+
+    Trending Products
+
+</h1>
+
+<div class="product-grid">
+
+    {% for product in products %}
+
+    <div class="product-card">
+
+        <span class="discount">
+            20% OFF
+        </span>
+
+        <img src="{{ product.image.url }}">
+
+        <div class="product-content">
+
+            <h2>
+                {{ product.name }}
+            </h2>
+
+            <div class="rating">
+
+                ⭐ {{ product.rating }}
+
+            </div>
+
+            <p>
+                {{ product.description }}
+            </p>
+
+            <h3>
+
+                ₹{{ product.price }}
+
+                <del>
+                    ₹{{ product.old_price }}
+                </del>
+
+            </h3>
+
+            <a
+               href="/add-to-cart/{{ product.id }}/"
+               class="btn"
+            >
+
+               Add To Cart
+
+            </a>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

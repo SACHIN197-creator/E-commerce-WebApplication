@@ -1,0 +1,63 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<h1 class="title">
+
+    Your Cart
+
+</h1>
+
+{% for item in items %}
+
+<div class="cart-card">
+
+    <img
+        src="{{ item.product.image.url }}"
+        class="cart-image"
+    >
+
+    <div>
+
+        <h2>
+            {{ item.product.name }}
+        </h2>
+
+        <p>
+            ₹{{ item.product.price }}
+        </p>
+
+        <p>
+            Quantity: {{ item.quantity }}
+        </p>
+
+        <a
+           href="/remove-item/{{ item.id }}/"
+           class="remove-btn"
+        >
+
+           Remove
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+<h1>
+
+    Total: ₹{{ total }}
+
+</h1>
+
+<br>
+
+<a href="/checkout/" class="btn">
+
+    Checkout
+
+</a>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<div class="login-page">
+
+    <div class="login-card">
+
+        <div class="login-left">
+
+            <h1>
+                Welcome Back
+            </h1>
+
+            <p>
+                Login to continue shopping
+            </p>
+
+            <img
+                src="https://tse4.mm.bing.net/th/id/OIP.O0gYu3IfoRRJBdAVvACjrAHaDu?pid=Api&P=0&h=180"
+                alt="login-image"
+            >
+
+        </div>
+
+        <div class="login-right">
+
+            <h2>
+                Login
+            </h2>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter Username"
+                    required
+                >
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter Password"
+                    required
+                >
+
+                <button type="submit">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <p class="register-link">
+
+                Don't have an account?
+
+                <a href="/register/">
+
+                    Register
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

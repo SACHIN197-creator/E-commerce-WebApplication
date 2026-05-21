@@ -1,0 +1,47 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<div class="register-page">
+
+    <div class="register-card">
+
+        <h1>Create Account</h1>
+
+        <p>
+            Join NovaCart and start shopping today
+        </p>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <input type="text"
+                   name="username"
+                   placeholder="Enter Username">
+
+            <input type="password"
+                   name="password"
+                   placeholder="Enter Password">
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+        <div class="login-link">
+
+            Already have an account?
+
+            <a href="/login/">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
