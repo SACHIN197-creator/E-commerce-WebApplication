@@ -52,6 +52,8 @@ A fully functional **E-commerce web application** built using Django framework a
 ### Order Page
 ![Order Page](images/order.png)
 
+### Admin Page
+![Order Page](images/admin.png)
 
 ---
 
