@@ -22,9 +22,7 @@ from django.conf.urls.static import static
 
 from testapp.views import *
 
-
 urlpatterns = [
-
     path('admin/', admin.site.urls),
     path('', home),
     path('register/', register_user),
@@ -32,14 +30,12 @@ urlpatterns = [
     path('logout/', logout_user),
     path('add-to-cart/<int:product_id>/', add_to_cart),
     path('cart/', cart_view),
-    path('remove-item/<int:item_id>/',remove_cart_item),
+    path('remove-item/<int:item_id>/', remove_cart_item),
     path('checkout/', checkout),
     path('api/products/', product_api),
-    ]
+]
 
-if settings.DEBUG:
-
-    urlpatterns += static(
-        settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT
-    )
+urlpatterns += static(
+    settings.MEDIA_URL,
+    document_root=settings.MEDIA_ROOT
+)
